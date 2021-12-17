@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: unless-stopped
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: rentacar
+      POSTGRES_USER: nest
+      POSTGRES_PASSWORD: nest
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgres_data:
